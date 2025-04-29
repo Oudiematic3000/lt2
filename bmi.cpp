@@ -92,7 +92,7 @@ void process_data(char* input_file, char* output_file)
     string person_id;
     int pounds, stones, ounces, feet, inches;
     double kg, m;
-    int cat;
+    char cat;
 
     f_in.open(input_file,ios::in);
     f_out.open(output_file,ofstream::out);
