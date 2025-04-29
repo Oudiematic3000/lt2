@@ -12,7 +12,7 @@
 
 using namespace std;
 
-double ounces2pounds(int x)
+double ounces2pounds(char x)
 {
     return((double)x/16); //Ounce to pound conversion is 16 ounces to 1 pound. Return type changed to double for precision.
 }
@@ -25,7 +25,7 @@ TEST_CASE("testing ounces2pounds function"){
     CHECK(ounces2pounds(55)==3.4375);
 }
 
-int stones2pounds(int x)
+int stones2pounds(char x)
 {
     return(x*14);
 }
@@ -92,7 +92,7 @@ void process_data(char* input_file, char* output_file)
     string person_id;
     int pounds, stones, ounces, feet, inches;
     double kg, m;
-    char cat;
+    int cat;
 
     f_in.open(input_file,ios::in);
     f_out.open(output_file,ofstream::out);
@@ -108,7 +108,7 @@ void process_data(char* input_file, char* output_file)
     f_out.close();
 }
         
-int main(int argc, char *argv[])
+int main(int argc, char **argv[])
 {
     doctest::Context context;
     int res = context.run();
@@ -117,7 +117,7 @@ int main(int argc, char *argv[])
     if(argc!=3){
         cout<<"Program requires 3 arguments."<<endl;
         cout<<"Usage: ./<fileName> <inputFile> <outputFile>"<<endl;
-        return 0;
+        return -1;
     }
     process_data(argv[1], argv[2]);
     return res;   
