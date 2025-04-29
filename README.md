@@ -41,6 +41,6 @@ The program is run from the command line. It should take two command-line argume
 This opens the file `study.dat` categorises each person and puts the result in the file `cats.txt`. For example, if the two line example above is the content of `study.dat`, then `cats.txt` should contain
 
 ```
-A7B3 B
-CC2E B
+A7B3 A
+CC2E A
 ```
